@@ -21,6 +21,8 @@ RUN code -v --user-data-dir /root/.config/Code && \
     sh install-vscode-extensions.sh ../extensions.list
 
 FROM ubuntu:18.10
+ARG user_uid=1000
+ARG user_gid=1001
 WORKDIR /project
 RUN apt update && apt install -y python3 python3-pip \
     apt-transport-https \
@@ -32,7 +34,8 @@ RUN apt update && apt install -y python3 python3-pip \
     software-properties-common \
     zsh \
     sudo
-RUN adduser --gecos '' --disabled-password coder && \
+RUN addgroup --gid $user_gid coder && \
+    adduser --uid $user_uid --gid $user_gid --gecos '' --disabled-password coder && \
     echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
 
 COPY scripts /tmp/scripts
