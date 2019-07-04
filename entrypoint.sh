@@ -1,5 +1,5 @@
-#!/bin/sh
-if [[ -v GIST_TOKEN]] && [[ -v GIST_ID ]]; then
+#!/bin/bash
+if [[ -v GIST_TOKEN ]] && [[ -v GIST_ID ]]; then
     cat <<EOF > /home/coder/.local/share/code-server/User/syncLocalSettings.json
     {
         "ignoreUploadFiles": [
@@ -35,13 +35,13 @@ if [[ -v GIST_TOKEN]] && [[ -v GIST_ID ]]; then
         "customFiles": {},
         "hostName": null
     }
-    EOF
+EOF
     cat <<EOF > /home/coder/.local/share/code-server/User/settings.json
     {
         "sync.autoDownload": true,
         "sync.gist": "$GIST_ID"
     }
-    EOF
+EOF
 fi
 
 code-server $PWD $@
