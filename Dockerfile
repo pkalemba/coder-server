@@ -1,7 +1,7 @@
 FROM codercom/code-server as coder-binary
 FROM debian:stable-slim
 ARG user_uid=1000
-ARG user_gid=1001
+ARG user_gid=1000
 RUN apt update && apt install -y \
     ca-certificates \
     curl \
