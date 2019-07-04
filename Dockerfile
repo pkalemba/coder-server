@@ -18,5 +18,5 @@ RUN /usr/local/bin/code-server --install-extension /tmp/code-settings-sync-3.2.9
 COPY entrypoint.sh /entrypoint.sh
 WORKDIR /home/coder/project
 EXPOSE 8443
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 
