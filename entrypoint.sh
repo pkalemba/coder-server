@@ -44,7 +44,7 @@ EOF
 EOF
 fi
 
-code-server $PWD $@
+code-server --disable-telemetry $PWD $@
 
 
 
