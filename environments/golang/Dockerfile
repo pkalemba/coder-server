@@ -1,6 +1,6 @@
 FROM pkalemba/coder-server:base
-ENV GO_VERSION=1.12.5
-ENV GOPATH=/usr/local/go-packages
+ENV GO_VERSION=1.12.6
+ENV GOPATH=/home/coder/go-packages
 ENV GO_ROOT=/usr/local/go
 ENV PATH=$PATH:/usr/local/go/bin
 ENV PATH=$PATH:${GOPATH}/bin
@@ -26,5 +26,6 @@ go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs && \
 go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct && \
 go get -u github.com/go-delve/delve/cmd/dlv && \
 go get -u github.com/golangci/golangci-lint/cmd/golangci-lint && \
-go get -u golang.org/x/tools/gopls
+go get -u golang.org/x/tools/gopls && \
+go get -u github.com/stamblerre/gocode
 USER coder
