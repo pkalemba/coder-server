@@ -2,6 +2,10 @@
 
 Development environment which allows edit files on remote servers by the browser.
 
+It is build on top of:
+
+https://github.com/cdr/code-server
+
 ## Quick start
 You need to have docker installed.
 
